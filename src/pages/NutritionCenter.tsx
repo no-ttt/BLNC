@@ -460,6 +460,26 @@ const NutritionCenter = () => {
               <p className="text-xl text-gray-600">基於科學檢測為您提供個人化營養建議</p>
             </div>
 
+            {/* 保健食品配對結果 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-12 p-8 bg-white rounded-2xl shadow-lg border-2 border-pink-200"
+            >
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-pink-600 mb-4">
+                  根據報告結果為您配對的保健食品:
+                </h3>
+                <div className="text-xl text-pink-500 mb-4 leading-relaxed">
+                  海洋鎂、海洋鈣、天然綜合維生素、藻油膠囊、UC-II 膠囊
+                </div>
+                <div className="text-lg text-green-600 font-medium">
+                  (您將於 3 個工作天左右收到保健品)
+                </div>
+              </div>
+            </motion.div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {reportCategories.map((category, index) => (
                 <motion.div
@@ -560,26 +580,6 @@ const NutritionCenter = () => {
             </motion.div>
 
             <div className="text-center">
-              {/* 保健食品配對結果 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="mb-8 p-8 bg-white rounded-2xl shadow-lg border-2 border-pink-200"
-              >
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-pink-600 mb-4">
-                    根據報告結果為您配對的保健食品:
-                  </h3>
-                  <div className="text-xl text-pink-500 mb-4 leading-relaxed">
-                    海洋鎂、海洋鈣、天然綜合維生素、藻油膠囊、UC-II 膠囊
-                  </div>
-                  <div className="text-lg text-green-600 font-medium">
-                    (您將於 3 個工作天左右收到保健品)
-                  </div>
-                </div>
-              </motion.div>
-
               <button
                 onClick={() => setCurrentStep('order')}
                 className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
