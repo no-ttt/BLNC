@@ -135,6 +135,324 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Product Showcase Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">精選保健產品</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              根據科學檢測結果，為您推薦最適合的營養補充品
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 海洋鎂 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="海洋鎂"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  熱銷
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">海洋鎂</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  來自深海的天然鎂離子，有助於維持正常的肌肉與神經功能，改善睡眠品質，舒緩壓力與疲勞。
+                </p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    NT$ 1,280
+                  </div>
+                  <div className="text-sm text-gray-500">60粒/瓶</div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                    改善睡眠品質
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                    舒緩肌肉緊張
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                    維持神經健康
+                  </div>
+                </div>
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  了解更多
+                </button>
+              </div>
+            </motion.div>
+
+            {/* 海洋鈣 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="海洋鈣"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-green-400 to-emerald-400 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  推薦
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">海洋鈣</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  萃取自純淨海洋的天然鈣質，搭配維生素D3，提升鈣質吸收率，強化骨骼與牙齒健康。
+                </p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                    NT$ 1,480
+                  </div>
+                  <div className="text-sm text-gray-500">90粒/瓶</div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                    強化骨骼密度
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                    促進鈣質吸收
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                    維護牙齒健康
+                  </div>
+                </div>
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  了解更多
+                </button>
+              </div>
+            </motion.div>
+
+            {/* 天然綜合維生素 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3683089/pexels-photo-3683089.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="天然綜合維生素"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-400 to-violet-400 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  全方位
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">天然綜合維生素</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  精選多種天然維生素與礦物質，全方位補充日常所需營養素，提升整體健康與活力。
+                </p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+                    NT$ 1,680
+                  </div>
+                  <div className="text-sm text-gray-500">120粒/瓶</div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-2"></div>
+                    全方位營養補充
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-2"></div>
+                    提升免疫力
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-2"></div>
+                    增強體力活力
+                  </div>
+                </div>
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-purple-400 to-violet-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  了解更多
+                </button>
+              </div>
+            </motion.div>
+
+            {/* 藻油膠囊 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3683098/pexels-photo-3683098.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="藻油膠囊"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-400 to-cyan-400 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  植物性
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">藻油膠囊</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  植物性Omega-3來源，富含DHA與EPA，支持心血管健康，促進大腦功能與視力保健。
+                </p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                    NT$ 1,880
+                  </div>
+                  <div className="text-sm text-gray-500">60粒/瓶</div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-teal-400 rounded-full mr-2"></div>
+                    支持心血管健康
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-teal-400 rounded-full mr-2"></div>
+                    促進大腦功能
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-teal-400 rounded-full mr-2"></div>
+                    維護視力健康
+                  </div>
+                </div>
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-teal-400 to-cyan-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  了解更多
+                </button>
+              </div>
+            </motion.div>
+
+            {/* UC-II 膠囊 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3683051/pexels-photo-3683051.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="UC-II 膠囊"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-400 to-red-400 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  專利
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">UC-II 膠囊</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  專利非變性二型膠原蛋白，有效維護關節健康，改善關節靈活度，適合關節保養需求者。
+                </p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+                    NT$ 2,280
+                  </div>
+                  <div className="text-sm text-gray-500">30粒/瓶</div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
+                    維護關節健康
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
+                    改善關節靈活度
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
+                    專利成分保證
+                  </div>
+                </div>
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-orange-400 to-red-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  了解更多
+                </button>
+              </div>
+            </motion.div>
+
+            {/* 個人化營養配方 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl shadow-lg border-2 border-pink-200 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3683040/pexels-photo-3683040.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="個人化營養配方"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  客製化
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">個人化營養配方</h3>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  根據您的檢測報告量身打造的專屬營養配方，精準補充您所需的營養素，達到最佳健康狀態。
+                </p>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+                    NT$ 3,280
+                  </div>
+                  <div className="text-sm text-gray-500">月配方案</div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-pink-400 rounded-full mr-2"></div>
+                    專屬檢測報告
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-pink-400 rounded-full mr-2"></div>
+                    客製化配方
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-pink-400 rounded-full mr-2"></div>
+                    專業營養師追蹤
+                  </div>
+                </div>
+                <Link
+                  to="/nutrition-center"
+                  className="block w-full px-4 py-3 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-center"
+                >
+                  立即檢測
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* View All Products Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center mt-12"
+          >
+            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-pink-200 hover:bg-pink-50 hover:border-pink-300 transition-all duration-200">
+              查看所有產品
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </button>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };
