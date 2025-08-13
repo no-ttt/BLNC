@@ -6,7 +6,7 @@ const NutritionCenter = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [loginData, setLoginData] = useState({
-    email: '',
+    idNumber: '',
     password: ''
   });
   const [registerData, setRegisterData] = useState({
@@ -15,14 +15,15 @@ const NutritionCenter = () => {
     password: '',
     confirmPassword: '',
     phone: '',
-    birthday: ''
+    birthday: '',
+    idNumber: ''
   });
   const [currentStep, setCurrentStep] = useState('login'); // login, report, order
   const [selectedPlan, setSelectedPlan] = useState('30days');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginData.email && loginData.password) {
+    if (loginData.idNumber && loginData.password) {
       setIsLoggedIn(true);
       setCurrentStep('report');
     }
@@ -34,7 +35,7 @@ const NutritionCenter = () => {
       alert('密碼確認不符！');
       return;
     }
-    if (registerData.name && registerData.email && registerData.password) {
+    if (registerData.name && registerData.email && registerData.password && registerData.idNumber) {
       alert('註冊成功！請登入您的帳號。');
       setShowRegister(false);
       setRegisterData({
@@ -43,7 +44,8 @@ const NutritionCenter = () => {
         password: '',
         confirmPassword: '',
         phone: '',
-        birthday: ''
+        birthday: '',
+        idNumber: ''
       });
     }
   };
@@ -195,19 +197,17 @@ const NutritionCenter = () => {
               <form onSubmit={handleLogin} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    電子郵件
+                    身分證後五碼
                   </label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <input
-                      type="email"
-                      value={loginData.email}
-                      onChange={(e) => setLoginData({...loginData, email: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-                      placeholder="請輸入您的電子郵件"
-                      required
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    value={loginData.idNumber}
+                    onChange={(e) => setLoginData({...loginData, idNumber: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    placeholder="請輸入身分證後五碼"
+                    maxLength={5}
+                    required
+                  />
                 </div>
 
                 <div>

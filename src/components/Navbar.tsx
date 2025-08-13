@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: '關於我們', path: '/about' },
     { name: '消費者好評心情', path: '/reviews' },
     { name: '健康專欄', path: '/health-column' },
-    { name: '您的精準營養中心', path: '/nutrition-center' },
+    { name: '會員登入和註冊', path: '/nutrition-center' },
     { name: '聯絡我們', path: '/contact' },
   ];
 
