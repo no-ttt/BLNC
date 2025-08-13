@@ -7,7 +7,7 @@ const NutritionCenter = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [loginData, setLoginData] = useState({
     idNumber: '',
-    password: ''
+    birthday: ''
   });
   const [registerData, setRegisterData] = useState({
     name: '',
@@ -23,7 +23,7 @@ const NutritionCenter = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginData.idNumber && loginData.password) {
+    if (loginData.idNumber && loginData.birthday) {
       setIsLoggedIn(true);
       setCurrentStep('report');
     }
@@ -212,16 +212,16 @@ const NutritionCenter = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    密碼
+                    生日
                   </label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <input
-                      type="password"
-                      value={loginData.password}
-                      onChange={(e) => setLoginData({...loginData, password: e.target.value})}
+                      type="date"
+                      value={loginData.birthday}
+                      onChange={(e) => setLoginData({...loginData, birthday: e.target.value})}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-                      placeholder="請輸入您的密碼"
+                      placeholder="請選擇您的生日"
                       required
                     />
                   </div>
