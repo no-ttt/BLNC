@@ -35,13 +35,82 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100">
+          {/* Floating Product Images */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 20, rotate: -10 }}
+              animate={{ opacity: 0.8, y: 0, rotate: -5 }}
+              transition={{ duration: 2, delay: 0.5 }}
+              className="absolute top-20 left-10 w-32 h-32 md:w-48 md:h-48"
+            >
+              <img
+                src="https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="海洋鎂"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: -20, rotate: 10 }}
+              animate={{ opacity: 0.8, y: 0, rotate: 5 }}
+              transition={{ duration: 2, delay: 0.8 }}
+              className="absolute top-32 right-16 w-28 h-28 md:w-40 md:h-40"
+            >
+              <img
+                src="https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="海洋鈣"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: -30, rotate: -15 }}
+              animate={{ opacity: 0.7, x: 0, rotate: -8 }}
+              transition={{ duration: 2, delay: 1.1 }}
+              className="absolute bottom-32 left-20 w-24 h-24 md:w-36 md:h-36"
+            >
+              <img
+                src="https://images.pexels.com/photos/3683089/pexels-photo-3683089.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="綜合維生素"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30, rotate: 12 }}
+              animate={{ opacity: 0.7, x: 0, rotate: 8 }}
+              transition={{ duration: 2, delay: 1.4 }}
+              className="absolute bottom-20 right-12 w-30 h-30 md:w-44 md:h-44"
+            >
+              <img
+                src="https://images.pexels.com/photos/3683098/pexels-photo-3683098.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="藻油膠囊"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: -8 }}
+              animate={{ opacity: 0.6, y: 0, rotate: -3 }}
+              transition={{ duration: 2, delay: 1.7 }}
+              className="absolute top-1/2 left-1/4 w-20 h-20 md:w-32 md:h-32"
+            >
+              <img
+                src="https://images.pexels.com/photos/3683051/pexels-photo-3683051.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="UC-II膠囊"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+          </div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold mb-6"
             >
               <span className="bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
@@ -51,7 +120,7 @@ const Home = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
             >
               為每個人量身打造的營養補充品解決方案<br />
@@ -60,7 +129,7 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Link
@@ -76,6 +145,39 @@ const Home = () => {
               >
                 了解更多
               </Link>
+            </motion.div>
+            
+            {/* Product Highlights */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+            >
+              <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg">
+                <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mb-2">
+                  1000+
+                </div>
+                <div className="text-sm text-gray-600">滿意客戶</div>
+              </div>
+              <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg">
+                <div className="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent mb-2">
+                  98%
+                </div>
+                <div className="text-sm text-gray-600">好評率</div>
+              </div>
+              <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg">
+                <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-violet-500 bg-clip-text text-transparent mb-2">
+                  50+
+                </div>
+                <div className="text-sm text-gray-600">專業配方</div>
+              </div>
+              <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg">
+                <div className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent mb-2">
+                  24/7
+                </div>
+                <div className="text-sm text-gray-600">專業服務</div>
+              </div>
             </motion.div>
           </div>
         </div>
