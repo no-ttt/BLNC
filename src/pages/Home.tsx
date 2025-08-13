@@ -190,7 +190,9 @@ const Home = () => {
                   </div>
                 </div>
                 <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  了解更多
+                  <Link to="/product/ocean-magnesium" className="block">
+                    了解更多
+                  </Link>
                 </button>
               </div>
             </motion.div>

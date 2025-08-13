@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Reviews from './pages/Reviews';
 import HealthColumn from './pages/HealthColumn';
 import NutritionCenter from './pages/NutritionCenter';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/health-column" element={<HealthColumn />} />
             <Route path="/nutrition-center" element={<NutritionCenter />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </motion.main>
         <Footer />
