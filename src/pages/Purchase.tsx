@@ -7,6 +7,7 @@ const Purchase = () => {
 
   const products = [
     {
+      id: 'ocean-magnesium',
       name: '海洋鎂',
       image: 'https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: '來自深海的天然鎂離子，改善睡眠品質，舒緩肌肉緊張',
@@ -14,6 +15,7 @@ const Purchase = () => {
       color: 'from-blue-400 to-cyan-400'
     },
     {
+      id: 'ocean-calcium',
       name: '海洋鈣',
       image: 'https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: '萃取自純淨海洋的天然鈣質，強化骨骼與牙齒健康',
@@ -21,6 +23,7 @@ const Purchase = () => {
       color: 'from-green-400 to-emerald-400'
     },
     {
+      id: 'natural-vitamins',
       name: '天然綜合維生素',
       image: 'https://images.pexels.com/photos/3683089/pexels-photo-3683089.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: '精選多種天然維生素與礦物質，全方位補充日常所需營養素',
@@ -28,6 +31,7 @@ const Purchase = () => {
       color: 'from-purple-400 to-violet-400'
     },
     {
+      id: 'algae-oil',
       name: '藻油膠囊',
       image: 'https://images.pexels.com/photos/3683098/pexels-photo-3683098.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: '植物性Omega-3來源，支持心血管健康，促進大腦功能',
@@ -35,11 +39,60 @@ const Purchase = () => {
       color: 'from-teal-400 to-cyan-400'
     },
     {
+      id: 'uc2-capsules',
       name: 'UC-II 膠囊',
       image: 'https://images.pexels.com/photos/3683051/pexels-photo-3683051.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: '專利非變性二型膠原蛋白，有效維護關節健康',
       benefits: ['維護關節健康', '改善關節靈活度', '專利成分保證'],
       color: 'from-orange-400 to-red-400'
+    },
+    {
+      id: 'probiotics',
+      name: '益生菌膠囊',
+      image: 'https://images.pexels.com/photos/3683062/pexels-photo-3683062.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '多株益生菌複合配方，維護腸道健康，提升消化機能',
+      benefits: ['改善腸道健康', '提升消化機能', '增強免疫力'],
+      color: 'from-yellow-400 to-orange-400'
+    },
+    {
+      id: 'coq10',
+      name: '輔酶Q10',
+      image: 'https://images.pexels.com/photos/3683045/pexels-photo-3683045.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '高純度輔酶Q10，支持心臟健康，提升細胞能量代謝',
+      benefits: ['支持心臟健康', '提升能量代謝', '抗氧化保護'],
+      color: 'from-red-400 to-pink-400'
+    },
+    {
+      id: 'vitamin-d3',
+      name: '維生素D3',
+      image: 'https://images.pexels.com/photos/3683067/pexels-photo-3683067.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '高濃度維生素D3，促進鈣質吸收，維護骨骼與免疫健康',
+      benefits: ['促進鈣質吸收', '維護骨骼健康', '增強免疫功能'],
+      color: 'from-indigo-400 to-purple-400'
+    },
+    {
+      id: 'b-complex',
+      name: 'B群維生素',
+      image: 'https://images.pexels.com/photos/3683078/pexels-photo-3683078.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '完整B群維生素配方，提升精神活力，支持神經系統健康',
+      benefits: ['提升精神活力', '支持神經健康', '改善新陳代謝'],
+      color: 'from-lime-400 to-green-400'
+    },
+    {
+      id: 'iron-supplement',
+      name: '鐵質補充劑',
+      image: 'https://images.pexels.com/photos/3683083/pexels-photo-3683083.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '溫和鐵質配方，改善貧血症狀，提升血紅素濃度',
+      benefits: ['改善貧血症狀', '提升血紅素', '增加體力'],
+      color: 'from-rose-400 to-red-400'
+    },
+    {
+      id: 'zinc-supplement',
+      name: '鋅補充劑',
+      image: 'https://images.pexels.com/photos/3683092/pexels-photo-3683092.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: '高生物利用率鋅配方，支持免疫系統，促進傷口癒合',
+      benefits: ['支持免疫系統', '促進傷口癒合', '維護皮膚健康'],
+      color: 'from-gray-400 to-slate-400'
     }
   ];
 
@@ -192,7 +245,8 @@ const Purchase = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                onClick={() => window.location.href = `#/product/${product.id}`}
               >
                 <div className="relative">
                   <img
@@ -215,6 +269,11 @@ const Purchase = () => {
                       </div>
                     ))}
                   </div>
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <button className={`w-full py-2 px-4 rounded-xl text-white font-medium bg-gradient-to-r ${product.color} hover:shadow-lg transition-all duration-200`}>
+                      查看詳情
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -223,7 +282,7 @@ const Purchase = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
               className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl shadow-lg border-2 border-pink-200 overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <div className="relative">
