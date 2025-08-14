@@ -109,8 +109,6 @@ const Home = () => {
           <div className="text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
-                className="w-8 h-8 rounded-full object-cover"
-              />
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold mb-6"
