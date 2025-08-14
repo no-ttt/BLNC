@@ -76,7 +76,7 @@ const ProductDetail = () => {
           <p className="text-gray-600 mb-8">抱歉，找不到您要查看的產品。</p>
           <button 
             onClick={() => window.history.back()}
-            className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+            className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
           >
             返回上一頁
           </button>
@@ -95,7 +95,7 @@ const ProductDetail = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-4">
             {product.name}
           </h1>
           <p className="text-xl text-gray-600">{product.subtitle}</p>
@@ -138,7 +138,7 @@ const ProductDetail = () => {
         >
           <button 
             onClick={() => window.history.back()}
-            className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+            className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
           >
             返回商品列表
           </button>

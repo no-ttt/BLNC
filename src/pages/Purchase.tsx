@@ -216,7 +216,7 @@ const Purchase = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-6">
             BLNC 產品購買
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -342,13 +342,13 @@ const Purchase = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`relative p-6 rounded-2xl border-2 cursor-pointer transition-all duration-200 ${
                   selectedPlan === plan.id
-                    ? 'border-pink-400 bg-pink-50 shadow-lg transform scale-105'
-                    : 'border-gray-200 bg-white hover:border-pink-200 hover:shadow-md'
+                    ? 'border-primary-400 bg-primary-50 shadow-lg transform scale-105'
+                    : 'border-gray-200 bg-white hover:border-primary-200 hover:shadow-md'
                 } ${plan.popular ? 'ring-2 ring-pink-300' : ''}`}
                 onClick={() => setSelectedPlan(plan.id)}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-400 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary-400 to-accent-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                     最受歡迎
                   </div>
                 )}
@@ -361,7 +361,7 @@ const Purchase = () => {
                   <h3 className="text-lg font-bold text-gray-800 mb-2">{plan.title}</h3>
                   
                   <div className="mb-2">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
                       NT$ {plan.price.toLocaleString()}
                     </div>
                     <div className="text-sm text-gray-400 line-through">
@@ -383,7 +383,7 @@ const Purchase = () => {
                 <button
                   className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 ${
                     selectedPlan === plan.id
-                      ? 'bg-gradient-to-r from-pink-400 to-purple-500 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-primary-400 to-accent-500 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -429,14 +429,14 @@ const Purchase = () => {
                 <div className="border-t pt-4">
                   <div className="flex justify-between items-center text-xl font-bold">
                     <span>總計金額</span>
-                    <span className="bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
                       NT$ {selectedPlanData.price.toLocaleString()}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <button className="w-full px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+              <button className="w-full px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 立即購買
               </button>
@@ -469,7 +469,7 @@ const Purchase = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="text-center bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl p-12"
+          className="text-center bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl p-12"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             還有疑問嗎？
@@ -478,11 +478,11 @@ const Purchase = () => {
             我們的專業團隊隨時為您提供諮詢服務，幫助您選擇最適合的健康方案
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
               <Users className="mr-2 h-5 w-5" />
               聯絡專業顧問
             </button>
-            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-pink-200 hover:bg-pink-50 transition-all duration-200">
+            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-primary-200 hover:bg-primary-50 transition-all duration-200">
               查看常見問題
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>

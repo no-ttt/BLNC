@@ -185,10 +185,10 @@ const NutritionCenter = () => {
               className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
             >
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <User className="h-8 w-8 text-white" />
                 </div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
                   會員登入
                 </h1>
                 <p className="text-gray-600 mt-2">登入您的 BLNC 會員帳號</p>
@@ -203,7 +203,7 @@ const NutritionCenter = () => {
                     type="text"
                     value={loginData.idNumber}
                     onChange={(e) => setLoginData({...loginData, idNumber: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="請輸入身分證後五碼"
                     maxLength={5}
                     required
@@ -220,7 +220,7 @@ const NutritionCenter = () => {
                       type="date"
                       value={loginData.birthday}
                       onChange={(e) => setLoginData({...loginData, birthday: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder="請選擇您的生日"
                       required
                     />
@@ -229,7 +229,7 @@ const NutritionCenter = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   登入
                 </button>
@@ -240,7 +240,7 @@ const NutritionCenter = () => {
                   還沒有帳號？
                   <button
                     onClick={() => setShowRegister(true)}
-                    className="text-pink-600 hover:text-pink-700 font-medium ml-1"
+                    className="text-primary-600 hover:text-primary-700 font-medium ml-1"
                   >
                     立即註冊
                   </button>
@@ -263,10 +263,10 @@ const NutritionCenter = () => {
               className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
             >
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <UserPlus className="h-8 w-8 text-white" />
                 </div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
                   會員註冊
                 </h1>
                 <p className="text-gray-600 mt-2">加入 BLNC 開始您的健康之旅</p>
@@ -281,7 +281,7 @@ const NutritionCenter = () => {
                     type="text"
                     value={registerData.name}
                     onChange={(e) => setRegisterData({...registerData, name: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="請輸入您的姓名"
                     required
                   />
@@ -297,7 +297,7 @@ const NutritionCenter = () => {
                       type="email"
                       value={registerData.email}
                       onChange={(e) => setRegisterData({...registerData, email: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder="請輸入您的電子郵件"
                       required
                     />
@@ -315,7 +315,7 @@ const NutritionCenter = () => {
                         type="password"
                         value={registerData.password}
                         onChange={(e) => setRegisterData({...registerData, password: e.target.value})}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         placeholder="請輸入密碼"
                         required
                       />
@@ -332,7 +332,7 @@ const NutritionCenter = () => {
                         type="password"
                         value={registerData.confirmPassword}
                         onChange={(e) => setRegisterData({...registerData, confirmPassword: e.target.value})}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         placeholder="請再次輸入密碼"
                         required
                       />
@@ -348,7 +348,7 @@ const NutritionCenter = () => {
                     type="tel"
                     value={registerData.phone}
                     onChange={(e) => setRegisterData({...registerData, phone: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="請輸入您的手機號碼"
                   />
                 </div>
@@ -363,7 +363,7 @@ const NutritionCenter = () => {
                       type="date"
                       value={registerData.birthday}
                       onChange={(e) => setRegisterData({...registerData, birthday: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -376,7 +376,7 @@ const NutritionCenter = () => {
                     type="text"
                     value={registerData.idNumber}
                     onChange={(e) => setRegisterData({...registerData, idNumber: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="請輸入身分證後五碼"
                     maxLength={5}
                     required
@@ -385,7 +385,7 @@ const NutritionCenter = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   註冊帳號
                 </button>
@@ -396,7 +396,7 @@ const NutritionCenter = () => {
                   已經有帳號了？
                   <button
                     onClick={() => setShowRegister(false)}
-                    className="text-pink-600 hover:text-pink-700 font-medium ml-1"
+                    className="text-primary-600 hover:text-primary-700 font-medium ml-1"
                   >
                     立即登入
                   </button>
@@ -465,13 +465,13 @@ const NutritionCenter = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-12 p-8 bg-white rounded-2xl shadow-lg border-2 border-pink-200"
+              className="mb-12 p-8 bg-white rounded-2xl shadow-lg border-2 border-primary-200"
             >
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-pink-600 mb-4">
+                <h3 className="text-2xl font-bold text-primary-600 mb-4">
                   根據報告結果為您配對的保健食品:
                 </h3>
-                <div className="text-xl text-pink-500 mb-4 leading-relaxed">
+                <div className="text-xl text-primary-500 mb-4 leading-relaxed">
                   海洋鎂、海洋鈣、天然綜合維生素、藻油膠囊、UC-II 膠囊
                 </div>
                 <div className="text-lg text-green-600 font-medium">
@@ -582,7 +582,7 @@ const NutritionCenter = () => {
             <div className="text-center">
               <button
                 onClick={() => setCurrentStep('order')}
-                className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 選擇訂購方案
               </button>
@@ -612,20 +612,20 @@ const NutritionCenter = () => {
                     transition={{ duration: 0.6 }}
                     className={`relative p-8 rounded-2xl border-2 cursor-pointer transition-all duration-200 ${
                       selectedPlan === plan.id
-                        ? 'border-pink-400 bg-pink-50 shadow-lg'
-                        : 'border-gray-200 bg-white hover:border-pink-200'
+                        ? 'border-primary-400 bg-primary-50 shadow-lg'
+                        : 'border-gray-200 bg-white hover:border-primary-200'
                     }`}
                     onClick={() => setSelectedPlan(plan.id)}
                   >
                     {plan.discount > 0 && (
-                      <div className="absolute -top-3 left-8 bg-gradient-to-r from-pink-400 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      <div className="absolute -top-3 left-8 bg-gradient-to-r from-primary-400 to-accent-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                         省 {plan.discount}%
                       </div>
                     )}
 
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold text-gray-800 mb-2">{plan.duration}</h3>
-                      <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-2">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-2">
                         NT$ {plan.monthlyPrice.toLocaleString()}
                       </div>
                       <div className="text-gray-600">每月</div>
@@ -670,7 +670,7 @@ const NutritionCenter = () => {
                   <div className="border-t pt-4">
                     <div className="flex justify-between text-xl font-bold">
                       <span>總計金額</span>
-                      <span className="bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
                         NT$ {pricingPlans.find(p => p.id === selectedPlan)?.totalPrice.toLocaleString()}
                       </span>
                     </div>
@@ -706,7 +706,7 @@ const NutritionCenter = () => {
                 </div>
 
                 <div className="text-center">
-                  <button className="w-full px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  <button className="w-full px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                     確認訂購並付款
                   </button>
                 </div>
