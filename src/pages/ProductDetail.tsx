@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Star, Heart, ShoppingCart, Shield, Award, Truck, RefreshCw, Check, Plus, Minus } from 'lucide-react';
+import { Star, Shield, Award, Truck, RefreshCw, Check } from 'lucide-react';
 
 import { useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
 
   // 產品資料庫
@@ -545,41 +544,8 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Quantity and Add to Cart */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-700 font-medium">數量：</span>
-                <div className="flex items-center border border-gray-300 rounded-xl">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-3 hover:bg-gray-50 transition-colors"
-                  >
-                    <Minus className="h-4 w-4" />
-                  </button>
-                  <span className="px-6 py-3 font-medium">{quantity}</span>
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="p-3 hover:bg-gray-50 transition-colors"
-                  >
-                    <Plus className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                  <ShoppingCart className="mr-2 h-5 w-5" />
-                  加入購物車
-                </button>
-                <button className="flex items-center justify-center px-8 py-4 border-2 border-pink-400 text-pink-600 font-semibold rounded-xl hover:bg-pink-50 transition-all duration-200">
-                  <Heart className="mr-2 h-5 w-5" />
-                  加入收藏
-                </button>
-              </div>
-            </div>
-
             {/* Trust Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-gray-200">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="text-center">
                 <Shield className="h-8 w-8 text-green-500 mx-auto mb-2" />
                 <div className="text-sm text-gray-600">品質保證</div>
