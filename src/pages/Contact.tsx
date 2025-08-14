@@ -63,7 +63,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-6">
             聯絡我們
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -85,7 +85,7 @@ const Contact = () => {
                   key={index}
                   className="flex items-start p-6 bg-white rounded-2xl shadow-lg border border-gray-100"
                 >
-                  <div className={`p-3 rounded-xl bg-gradient-to-r ${info.color} text-white mr-4 flex-shrink-0`}>
+                  <div className={`p-3 rounded-xl bg-gradient-to-r ${getContactColor(index)} text-white mr-4 flex-shrink-0`}>
                     {info.icon}
                   </div>
                   <div>
@@ -99,7 +99,7 @@ const Contact = () => {
             </div>
 
             {/* FAQ Section */}
-            <div className="mt-12 p-8 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl">
+            <div className="mt-12 p-8 bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">常見問題</h3>
               <div className="space-y-4">
                 <div>
@@ -139,7 +139,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                     placeholder="請輸入您的姓名"
                   />
                 </div>
@@ -153,7 +153,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                     placeholder="請輸入您的電話"
                   />
                 </div>
@@ -170,7 +170,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                   placeholder="請輸入您的電子郵件"
                 />
               </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                 >
                   <option value="">請選擇諮詢主旨</option>
                   <option value="product">產品諮詢</option>
@@ -207,14 +207,14 @@ const Contact = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
                   placeholder="請詳細描述您的問題或需求..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 <Send className="mr-2 h-5 w-5" />
                 發送訊息
@@ -225,6 +225,17 @@ const Contact = () => {
       </div>
     </div>
   );
+};
+
+// Helper function for contact info colors
+const getContactColor = (index: number) => {
+  const colors = [
+    'from-primary-400 to-accent-400',
+    'from-secondary-400 to-secondary-500',
+    'from-primary-500 to-primary-600',
+    'from-accent-400 to-accent-500'
+  ];
+  return colors[index] || colors[0];
 };
 
 export default Contact;

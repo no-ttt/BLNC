@@ -73,12 +73,12 @@ const Reviews = () => {
   ];
 
   const categoryColors = {
-    '睡眠改善': 'from-purple-400 to-violet-400',
-    '壓力管理': 'from-blue-400 to-cyan-400',
-    '骨骼健康': 'from-green-400 to-emerald-400',
-    '免疫系統': 'from-pink-400 to-rose-400',
-    '心血管健康': 'from-red-400 to-orange-400',
-    '認知健康': 'from-indigo-400 to-purple-400'
+    '睡眠改善': 'from-primary-400 to-accent-400',
+    '壓力管理': 'from-secondary-400 to-secondary-500',
+    '骨骼健康': 'from-primary-500 to-primary-600',
+    '免疫系統': 'from-accent-400 to-accent-500',
+    '心血管健康': 'from-primary-600 to-accent-600',
+    '認知健康': 'from-secondary-500 to-secondary-600'
   };
 
   const renderStars = (rating: number) => {
@@ -102,7 +102,7 @@ const Reviews = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-6">
             消費者好評心情
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -117,19 +117,19 @@ const Reviews = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
         >
-          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-pink-100">
+          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-primary-100">
             <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent mb-2">
               98%
             </div>
             <p className="text-gray-600">客戶滿意度</p>
           </div>
-          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-pink-100">
+          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-primary-100">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent mb-2">
               1000+
             </div>
             <p className="text-gray-600">成功案例</p>
           </div>
-          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-pink-100">
+          <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-primary-100">
             <div className="text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-2">
               4.9
             </div>
@@ -183,7 +183,7 @@ const Reviews = () => {
 
                 {/* Footer */}
                 <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <div className="flex items-center text-pink-500">
+                  <div className="flex items-center text-primary-500">
                     <Heart className="h-5 w-5 mr-2" />
                     <span className="text-sm">有幫助</span>
                   </div>
@@ -202,7 +202,7 @@ const Reviews = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16 p-12 bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl"
+          className="text-center mt-16 p-12 bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             您也想分享使用心得嗎？
@@ -210,7 +210,7 @@ const Reviews = () => {
           <p className="text-lg text-gray-600 mb-8">
             成為 BLNC 大家庭的一員，體驗個人化營養帶來的改變
           </p>
-          <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+          <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
             開始我的健康之旅
             <Heart className="ml-2 h-5 w-5" />
           </button>

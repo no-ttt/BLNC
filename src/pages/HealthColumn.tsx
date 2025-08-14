@@ -80,12 +80,12 @@ const HealthColumn = () => {
     : articles.filter(article => article.category === selectedCategory);
 
   const categoryColors: { [key: string]: string } = {
-    '營養知識': 'from-pink-400 to-rose-400',
-    '壓力管理': 'from-blue-400 to-cyan-400',
-    '腸道健康': 'from-green-400 to-emerald-400',
-    '抗老化': 'from-purple-400 to-violet-400',
-    '睡眠健康': 'from-indigo-400 to-blue-400',
-    '運動營養': 'from-orange-400 to-red-400'
+    '營養知識': 'from-primary-400 to-accent-400',
+    '壓力管理': 'from-secondary-400 to-secondary-500',
+    '腸道健康': 'from-primary-500 to-primary-600',
+    '抗老化': 'from-accent-400 to-accent-500',
+    '睡眠健康': 'from-secondary-500 to-secondary-600',
+    '運動營養': 'from-primary-600 to-accent-600'
   };
 
   return (
@@ -98,7 +98,7 @@ const HealthColumn = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-6">
             健康專欄
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -119,8 +119,8 @@ const HealthColumn = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-pink-400 to-purple-500 text-white shadow-lg'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-pink-50 hover:border-pink-200'
+                  ? 'bg-gradient-to-r from-primary-400 to-accent-500 text-white shadow-lg'
+                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-primary-50 hover:border-primary-200'
               }`}
             >
               {category}
@@ -154,7 +154,7 @@ const HealthColumn = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-pink-600 transition-colors duration-200">
+                <h2 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-primary-600 transition-colors duration-200">
                   {article.title}
                 </h2>
                 
@@ -192,7 +192,7 @@ const HealthColumn = () => {
 
                 {/* Read More Button */}
                 <div className="mt-4">
-                  <button className="flex items-center text-pink-600 hover:text-pink-700 font-medium group">
+                  <button className="flex items-center text-primary-600 hover:text-primary-700 font-medium group">
                     閱讀更多
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                   </button>
@@ -207,7 +207,7 @@ const HealthColumn = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 p-12 bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl text-center"
+          className="mt-16 p-12 bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl text-center"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             訂閱健康電子報
@@ -219,9 +219,9 @@ const HealthColumn = () => {
             <input
               type="email"
               placeholder="請輸入您的電子郵件"
-              className="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              className="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             />
-            <button className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+            <button className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
               立即訂閱
             </button>
           </div>
