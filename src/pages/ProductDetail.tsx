@@ -498,82 +498,98 @@ const ProductDetail = () => {
             </div>
           </motion.div>
 
-          {/* Product Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <div>
-              <h1 className="text-4xl font-bold text-gray-800 mb-2">{product.name}</h1>
-              <p className="text-xl text-gray-600 mb-4">{product.subtitle}</p>
-              
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="flex items-center">
-                  {renderStars(product.rating)}
-                  <span className="ml-2 text-sm text-gray-600">
-                    {product.rating} ({product.reviewCount} 則評價)
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
-                  NT$ {product.price.toLocaleString()}
-                </div>
-                <div className="text-xl text-gray-400 line-through">
-                  NT$ {product.originalPrice.toLocaleString()}
-                </div>
-                <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
-                  省 NT$ {product.originalPrice - product.price}
-                </div>
-              </div>
-            </div>
-
-            {/* Key Features */}
-            <div className="bg-blue-50 rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">產品特色</h3>
-              <div className="space-y-3">
-                {product.keyFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <Check className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div className="text-center">
-                <Shield className="h-8 w-8 text-green-500 mx-auto mb-2" />
-                <div className="text-sm text-gray-600">品質保證</div>
-              </div>
-              <div className="text-center">
-                <Truck className="h-8 w-8 text-blue-500 mx-auto mb-2" />
-                <div className="text-sm text-gray-600">免運配送</div>
-              </div>
-              <div className="text-center">
-                <RefreshCw className="h-8 w-8 text-purple-500 mx-auto mb-2" />
-                <div className="text-sm text-gray-600">30天退換</div>
-              </div>
-              <div className="text-center">
-                <Award className="h-8 w-8 text-orange-500 mx-auto mb-2" />
-                <div className="text-sm text-gray-600">國際認證</div>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
+        {/* Product Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">{product.name}</h1>
+          <p className="text-xl text-gray-600 mb-6">{product.subtitle}</p>
+          
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="flex items-center">
+              {renderStars(product.rating)}
+              <span className="ml-2 text-sm text-gray-600">
+                {product.rating} ({product.reviewCount} 則評價)
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center space-x-4">
+            <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+              NT$ {product.price.toLocaleString()}
+            </div>
+            <div className="text-lg text-gray-400 line-through">
+              NT$ {product.originalPrice.toLocaleString()}
+            </div>
+            <div className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">
+              省 NT$ {product.originalPrice - product.price}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Key Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="max-w-4xl mx-auto mb-16"
+        >
+          <div className="bg-blue-50 rounded-2xl p-8">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">產品特色</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {product.keyFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center">
+                  <Check className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Trust Badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="max-w-4xl mx-auto mb-16"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <Shield className="h-10 w-10 text-green-500 mx-auto mb-3" />
+              <div className="font-medium text-gray-800 mb-1">品質保證</div>
+              <div className="text-sm text-gray-600">國際認證標準</div>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <Truck className="h-10 w-10 text-blue-500 mx-auto mb-3" />
+              <div className="font-medium text-gray-800 mb-1">免運配送</div>
+              <div className="text-sm text-gray-600">全台免費配送</div>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <RefreshCw className="h-10 w-10 text-purple-500 mx-auto mb-3" />
+              <div className="font-medium text-gray-800 mb-1">30天退換</div>
+              <div className="text-sm text-gray-600">不滿意全額退款</div>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <Award className="h-10 w-10 text-orange-500 mx-auto mb-3" />
+              <div className="font-medium text-gray-800 mb-1">國際認證</div>
+              <div className="text-sm text-gray-600">多項品質認證</div>
+            </div>
+          </div>
+        </motion.div>
         {/* Benefits Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">為什麼選擇海洋鎂？</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">為什麼選擇{product.name}？</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {product.benefits.map((benefit, index) => (
               <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
@@ -589,7 +605,7 @@ const ProductDetail = () => {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
         >
           <div className="border-b border-gray-200">
