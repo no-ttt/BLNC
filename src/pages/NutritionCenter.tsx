@@ -1,21 +1,52 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { User, Calendar, FileText, ShoppingCart, Shield, CreditCard, Clock, Check } from 'lucide-react';
+import { User, Calendar, FileText, ShoppingCart, Shield, CreditCard, Clock, Check, Mail, Lock, UserPlus } from 'lucide-react';
 
 const NutritionCenter = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   const [loginData, setLoginData] = useState({
-    idSuffix: '',
+    idNumber: '',
     birthday: ''
   });
-  const [currentStep, setCurrentStep] = useState('login'); // login, report, recommendation, order
-  const [selectedPlan, setSelectedPlan] = useState('3months');
+  const [registerData, setRegisterData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    phone: '',
+    birthday: '',
+    idNumber: ''
+  });
+  const [currentStep, setCurrentStep] = useState('login'); // login, report, order
+  const [selectedPlan, setSelectedPlan] = useState('30days');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (loginData.idSuffix && loginData.birthday) {
+    if (loginData.idNumber && loginData.birthday) {
       setIsLoggedIn(true);
       setCurrentStep('report');
+    }
+  };
+
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (registerData.password !== registerData.confirmPassword) {
+      alert('密碼確認不符！');
+      return;
+    }
+    if (registerData.name && registerData.email && registerData.password && registerData.idNumber) {
+      alert('註冊成功！請登入您的帳號。');
+      setShowRegister(false);
+      setRegisterData({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        phone: '',
+        birthday: '',
+        idNumber: ''
+      });
     }
   };
 
@@ -122,22 +153,22 @@ const NutritionCenter = () => {
 
   const pricingPlans = [
     {
-      id: '3months',
-      duration: '3個月',
+      id: '30days',
+      duration: '30天',
       monthlyPrice: 3280,
-      totalPrice: 9840,
+      totalPrice: 3280,
       discount: 0,
-      isMinimum: true,
-      features: ['最低訂購量', '每月自動配送', '專業諮詢服務']
+      isMinimum: false,
+      features: ['體驗方案', '每月自動配送', '專業諮詢服務', '可隨時取消']
     },
     {
-      id: '12months',
-      duration: '12個月',
+      id: '90days',
+      duration: '90天',
       monthlyPrice: 2950,
-      totalPrice: 35400,
-      discount: 12,
+      totalPrice: 8850,
+      discount: 10,
       isMinimum: false,
-      features: ['年度優惠 12% OFF', '每月自動配送', '專業諮詢服務', '免費健康追蹤', '季度配方調整']
+      features: ['季度優惠 10% OFF', '每月自動配送', '專業諮詢服務', '免費健康追蹤', '配方調整服務']
     }
   ];
 
@@ -145,66 +176,241 @@ const NutritionCenter = () => {
     return (
       <div className="min-h-screen py-16">
         <div className="max-w-md mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
-          >
-            <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <User className="h-8 w-8 text-white" />
-              </div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
-                營養中心登入
-              </h1>
-              <p className="text-gray-600 mt-2">請輸入您的身分證後五碼及生日</p>
-            </div>
-
-            <form onSubmit={handleLogin} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  身分證後五碼
-                </label>
-                <input
-                  type="text"
-                  maxLength={5}
-                  value={loginData.idSuffix}
-                  onChange={(e) => setLoginData({...loginData, idSuffix: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-                  placeholder="請輸入後五碼"
-                  required
-                />
+          {!showRegister ? (
+            // 登入頁面
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+            >
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <User className="h-8 w-8 text-white" />
+                </div>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
+                  會員登入
+                </h1>
+                <p className="text-gray-600 mt-2">登入您的 BLNC 會員帳號</p>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  生日
-                </label>
-                <input
-                  type="date"
-                  value={loginData.birthday}
-                  onChange={(e) => setLoginData({...loginData, birthday: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-                  required
-                />
+              <form onSubmit={handleLogin} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    身分證後五碼
+                  </label>
+                  <input
+                    type="text"
+                    value={loginData.idNumber}
+                    onChange={(e) => setLoginData({...loginData, idNumber: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    placeholder="請輸入身分證後五碼"
+                    maxLength={5}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    生日
+                  </label>
+                  <div className="relative">
+                    <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <input
+                      type="date"
+                      value={loginData.birthday}
+                      onChange={(e) => setLoginData({...loginData, birthday: e.target.value})}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      placeholder="請選擇您的生日"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                >
+                  登入
+                </button>
+              </form>
+
+              <div className="mt-6 text-center">
+                <p className="text-gray-600">
+                  還沒有帳號？
+                  <button
+                    onClick={() => setShowRegister(true)}
+                    className="text-primary-600 hover:text-primary-700 font-medium ml-1"
+                  >
+                    立即註冊
+                  </button>
+                </p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full px-6 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-              >
-                登入查看報告
-              </button>
-            </form>
+              <div className="mt-8 p-4 bg-blue-50 rounded-xl">
+                <p className="text-sm text-blue-800">
+                  <Shield className="h-4 w-4 inline mr-2" />
+                  您的個人資料受到完整保護，我們遵循嚴格的隱私政策。
+                </p>
+              </div>
+            </motion.div>
+          ) : (
+            // 註冊頁面
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+            >
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <UserPlus className="h-8 w-8 text-white" />
+                </div>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
+                  會員註冊
+                </h1>
+                <p className="text-gray-600 mt-2">加入 BLNC 開始您的健康之旅</p>
+              </div>
 
-            <div className="mt-8 p-4 bg-blue-50 rounded-xl">
-              <p className="text-sm text-blue-800">
-                <Shield className="h-4 w-4 inline mr-2" />
-                您的個人資料受到完整保護，我們遵循嚴格的隱私政策。
-              </p>
-            </div>
-          </motion.div>
+              <form onSubmit={handleRegister} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    姓名 *
+                  </label>
+                  <input
+                    type="text"
+                    value={registerData.name}
+                    onChange={(e) => setRegisterData({...registerData, name: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    placeholder="請輸入您的姓名"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    電子郵件 *
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <input
+                      type="email"
+                      value={registerData.email}
+                      onChange={(e) => setRegisterData({...registerData, email: e.target.value})}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      placeholder="請輸入您的電子郵件"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      密碼 *
+                    </label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <input
+                        type="password"
+                        value={registerData.password}
+                        onChange={(e) => setRegisterData({...registerData, password: e.target.value})}
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        placeholder="請輸入密碼"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      確認密碼 *
+                    </label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <input
+                        type="password"
+                        value={registerData.confirmPassword}
+                        onChange={(e) => setRegisterData({...registerData, confirmPassword: e.target.value})}
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        placeholder="請再次輸入密碼"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    手機號碼
+                  </label>
+                  <input
+                    type="tel"
+                    value={registerData.phone}
+                    onChange={(e) => setRegisterData({...registerData, phone: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    placeholder="請輸入您的手機號碼"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    生日
+                  </label>
+                  <div className="relative">
+                    <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <input
+                      type="date"
+                      value={registerData.birthday}
+                      onChange={(e) => setRegisterData({...registerData, birthday: e.target.value})}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    身分證後五碼 *
+                  </label>
+                  <input
+                    type="text"
+                    value={registerData.idNumber}
+                    onChange={(e) => setRegisterData({...registerData, idNumber: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    placeholder="請輸入身分證後五碼"
+                    maxLength={5}
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                >
+                  註冊帳號
+                </button>
+              </form>
+
+              <div className="mt-6 text-center">
+                <p className="text-gray-600">
+                  已經有帳號了？
+                  <button
+                    onClick={() => setShowRegister(false)}
+                    className="text-primary-600 hover:text-primary-700 font-medium ml-1"
+                  >
+                    立即登入
+                  </button>
+                </p>
+              </div>
+
+              <div className="mt-8 p-4 bg-blue-50 rounded-xl">
+                <p className="text-sm text-blue-800">
+                  <Shield className="h-4 w-4 inline mr-2" />
+                  註冊即表示您同意我們的服務條款和隱私政策。
+                </p>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     );
@@ -223,21 +429,20 @@ const NutritionCenter = () => {
           <div className="flex items-center space-x-8">
             {[
               { id: 'report', name: '檢測報告', icon: FileText },
-              { id: 'recommendation', name: '產品建議', icon: Shield },
               { id: 'order', name: '訂購方案', icon: ShoppingCart }
             ].map((step, index) => (
               <div key={step.id} className="flex items-center">
                 <div className={`flex items-center justify-center w-12 h-12 rounded-full ${
                   currentStep === step.id ? 'bg-gradient-to-r from-pink-400 to-purple-500 text-white' :
-                  ['report', 'recommendation'].includes(step.id) && currentStep === 'order' ? 'bg-green-500 text-white' :
+                  step.id === 'report' && currentStep === 'order' ? 'bg-green-500 text-white' :
                   'bg-gray-200 text-gray-600'
                 }`}>
-                  {(['report', 'recommendation'].includes(step.id) && currentStep === 'order') ? 
+                  {(step.id === 'report' && currentStep === 'order') ? 
                     <Check className="h-6 w-6" /> : <step.icon className="h-6 w-6" />
                   }
                 </div>
                 <span className="ml-3 font-medium text-gray-700">{step.name}</span>
-                {index < 2 && <div className="w-16 h-0.5 bg-gray-300 ml-4"></div>}
+                {index < 1 && <div className="w-16 h-0.5 bg-gray-300 ml-4"></div>}
               </div>
             ))}
           </div>
@@ -254,6 +459,26 @@ const NutritionCenter = () => {
               <h1 className="text-4xl font-bold text-gray-800 mb-4">您的營養檢測報告</h1>
               <p className="text-xl text-gray-600">基於科學檢測為您提供個人化營養建議</p>
             </div>
+
+            {/* 保健食品配對結果 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-12 p-8 bg-white rounded-2xl shadow-lg border-2 border-primary-200"
+            >
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-primary-600 mb-4">
+                  根據報告結果為您配對的保健食品:
+                </h3>
+                <div className="text-xl text-primary-500 mb-4 leading-relaxed">
+                  海洋鎂、海洋鈣、天然綜合維生素、藻油膠囊、UC-II 膠囊
+                </div>
+                <div className="text-lg text-green-600 font-medium">
+                  (您將於 3 個工作天左右收到保健品)
+                </div>
+              </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {reportCategories.map((category, index) => (
@@ -356,84 +581,11 @@ const NutritionCenter = () => {
 
             <div className="text-center">
               <button
-                onClick={() => setCurrentStep('recommendation')}
-                className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                onClick={() => setCurrentStep('order')}
+                className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
-                查看個人化產品建議
+                選擇訂購方案
               </button>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Recommendation View */}
-        {currentStep === 'recommendation' && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold text-gray-800 mb-4">專屬客製化產品</h1>
-              <p className="text-xl text-gray-600">根據您的檢測報告量身打造</p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <div className="text-center mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-10 w-10 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-2">{customProduct.name}</h2>
-                  <p className="text-gray-600">{customProduct.description}</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-6">配方成分</h3>
-                    <div className="space-y-4">
-                      {customProduct.ingredients.map((ingredient, index) => (
-                        <div key={index} className="p-4 bg-gray-50 rounded-xl">
-                          <div className="flex justify-between items-start mb-2">
-                            <h4 className="font-semibold text-gray-800">{ingredient.name}</h4>
-                            <span className="text-sm bg-pink-100 text-pink-800 px-2 py-1 rounded-full">
-                              {ingredient.amount}
-                            </span>
-                          </div>
-                          <p className="text-sm text-gray-600">{ingredient.purpose}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-6">服務特色</h3>
-                    <div className="space-y-4">
-                      {customProduct.features.map((feature, index) => (
-                        <div key={index} className="flex items-center p-4 bg-blue-50 rounded-xl">
-                          <Check className="h-5 w-5 text-blue-500 mr-3" />
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-8 p-6 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl text-center">
-                      <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-2">
-                        NT$ {customProduct.monthlyPrice.toLocaleString()}
-                      </div>
-                      <div className="text-gray-600">每月價格</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <button
-                    onClick={() => setCurrentStep('order')}
-                    className="px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                  >
-                    立即訂購
-                  </button>
-                </div>
-              </div>
             </div>
           </motion.div>
         )}
@@ -460,25 +612,20 @@ const NutritionCenter = () => {
                     transition={{ duration: 0.6 }}
                     className={`relative p-8 rounded-2xl border-2 cursor-pointer transition-all duration-200 ${
                       selectedPlan === plan.id
-                        ? 'border-pink-400 bg-pink-50 shadow-lg'
-                        : 'border-gray-200 bg-white hover:border-pink-200'
+                        ? 'border-primary-400 bg-primary-50 shadow-lg'
+                        : 'border-gray-200 bg-white hover:border-primary-200'
                     }`}
                     onClick={() => setSelectedPlan(plan.id)}
                   >
                     {plan.discount > 0 && (
-                      <div className="absolute -top-3 left-8 bg-gradient-to-r from-pink-400 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      <div className="absolute -top-3 left-8 bg-gradient-to-r from-primary-400 to-accent-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                         省 {plan.discount}%
-                      </div>
-                    )}
-                    {plan.isMinimum && (
-                      <div className="absolute -top-3 right-8 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                        最低訂購量
                       </div>
                     )}
 
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold text-gray-800 mb-2">{plan.duration}</h3>
-                      <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent mb-2">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-2">
                         NT$ {plan.monthlyPrice.toLocaleString()}
                       </div>
                       <div className="text-gray-600">每月</div>
@@ -523,7 +670,7 @@ const NutritionCenter = () => {
                   <div className="border-t pt-4">
                     <div className="flex justify-between text-xl font-bold">
                       <span>總計金額</span>
-                      <span className="bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent">
                         NT$ {pricingPlans.find(p => p.id === selectedPlan)?.totalPrice.toLocaleString()}
                       </span>
                     </div>
@@ -559,7 +706,7 @@ const NutritionCenter = () => {
                 </div>
 
                 <div className="text-center">
-                  <button className="w-full px-8 py-4 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                  <button className="w-full px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                     確認訂購並付款
                   </button>
                 </div>

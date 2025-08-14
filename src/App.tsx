@@ -9,11 +9,13 @@ import Contact from './pages/Contact';
 import Reviews from './pages/Reviews';
 import HealthColumn from './pages/HealthColumn';
 import NutritionCenter from './pages/NutritionCenter';
+import Purchase from './pages/Purchase';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50">
         <Navbar />
         <motion.main
           initial={{ opacity: 0 }}
@@ -27,6 +29,8 @@ function App() {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/health-column" element={<HealthColumn />} />
             <Route path="/nutrition-center" element={<NutritionCenter />} />
+            <Route path="/purchase" element={<Purchase />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </motion.main>
         <Footer />
