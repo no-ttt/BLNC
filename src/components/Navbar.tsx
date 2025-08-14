@@ -10,6 +10,7 @@ const Navbar = () => {
   const menuItems = [
     { name: '首頁', path: '/' },
     { name: '關於我們', path: '/about' },
+    { name: '購買商品', path: '/purchase' },
     { name: '消費者好評心情', path: '/reviews' },
     { name: '健康專欄', path: '/health-column' },
     { name: '會員登入和註冊', path: '/nutrition-center' },
