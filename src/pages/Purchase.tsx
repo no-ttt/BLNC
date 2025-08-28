@@ -469,7 +469,7 @@ const Purchase = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="text-center bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl p-12"
+          className="text-center bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50 rounded-3xl p-12"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             還有疑問嗎？

@@ -207,7 +207,7 @@ const HealthColumn = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 p-12 bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl text-center"
+          className="mt-16 p-12 bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50 rounded-3xl text-center"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             訂閱健康電子報

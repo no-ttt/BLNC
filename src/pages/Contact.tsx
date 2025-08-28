@@ -99,7 +99,7 @@ const Contact = () => {
             </div>
 
             {/* FAQ Section */}
-            <div className="mt-12 p-8 bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl">
+            <div className="mt-12 p-8 bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50 rounded-2xl">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">常見問題</h3>
               <div className="space-y-4">
                 <div>

@@ -15,7 +15,7 @@ import ProductDetail from './pages/ProductDetail';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100">
         <Navbar />
         <motion.main
           initial={{ opacity: 0 }}

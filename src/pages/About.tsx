@@ -35,7 +35,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-100 via-accent-50 to-secondary-100">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100">
           {/* Floating Product Images */}
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
@@ -214,7 +214,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-50 to-accent-50">
+      <section className="py-20 bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
