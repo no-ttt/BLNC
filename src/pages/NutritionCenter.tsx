@@ -240,7 +240,7 @@ const NutritionCenter = () => {
                   還沒有帳號？
                   <button
                     onClick={() => setShowRegister(true)}
-                    className="text-primary-600 hover:text-primary-700 font-medium ml-1"
+                    className="text-blue-600 hover:text-blue-700 font-medium ml-1"
                   >
                     立即註冊
                   </button>
