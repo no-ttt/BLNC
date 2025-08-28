@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logo from '/logo.jpeg';
+import logo from '/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="BLNC" className="h-16" />
+          <img src={logo} alt="BLNC" className="h-24" />
           </Link>
 
           {/* Desktop Menu */}
