@@ -213,6 +213,141 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Why We're Different Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+              為什麼我們的營養品與別人不同且有效？
+            </h2>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                面對市面上琳瑯滿目的營養補充品，卻不知道哪一款才真正適合自己？
+              </p>
+              <div className="bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50 rounded-2xl p-8 mb-8">
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  您是否花費大量金錢嘗試各種保健品，效果卻不盡理想。這是因為每個人的體質都是不同的，由複雜的基因密碼所決定。「一體適用」的產品，已經難以符合因人而異的生理需求了。
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  <span className="font-bold text-primary-600">BLNC 的誕生，就是要終結您的盲目嘗試。</span>
+                  有效的營養補充不應該憑感覺或猜測，現在開始，我們將透過精準的科學檢測，為您量身訂製最符合您的保健方案，打造真正專屬的營養計畫。
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Science-Based Approach */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-600 bg-clip-text text-transparent mb-8">
+              讓科學為您量身打造
+            </h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              我們結合了尖端的基因科技與強大的數據分析能力，為您解鎖身體的專屬密碼。
+            </p>
+          </motion.div>
+
+          {/* Technology Features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Gene Testing */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative"
+            >
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-800">晶片的基因檢測</h4>
+                </div>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  我們使用高效的基因檢測晶片，精準分析您體內與營養吸收、代謝、以及各項生理機能相關的關鍵基因，為您找出身體潛在的精準健康需求
+                </p>
+                <div className="mt-6 flex items-center text-primary-600">
+                  <div className="w-2 h-2 bg-primary-400 rounded-full mr-3"></div>
+                  <span className="font-medium">精準基因分析技術</span>
+                </div>
+                <div className="mt-2 flex items-center text-primary-600">
+                  <div className="w-2 h-2 bg-primary-400 rounded-full mr-3"></div>
+                  <span className="font-medium">個人化健康密碼解讀</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Big Data Analysis */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="relative"
+            >
+              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 rounded-2xl flex items-center justify-center mr-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-800">大數據分析</h4>
+                </div>
+                <p className="text-gray-600 leading-relaxed text-lg mb-4">
+                  分析出您個人專屬的基因健康說明書，再透過我們獨家研發的大數據分析系統。將您的基因數據與龐大的科學研究資料庫進行交叉比對，找出您真實缺乏且最適合您的營養素、劑量與配方。
+                </p>
+                <p className="text-gray-700 font-medium text-lg">
+                  這樣調配出的保健品才是真正對您的健康有最大助益。
+                </p>
+                <div className="mt-6 flex items-center text-primary-600">
+                  <div className="w-2 h-2 bg-primary-400 rounded-full mr-3"></div>
+                  <span className="font-medium">獨家大數據分析系統</span>
+                </div>
+                <div className="mt-2 flex items-center text-primary-600">
+                  <div className="w-2 h-2 bg-primary-400 rounded-full mr-3"></div>
+                  <span className="font-medium">科學研究資料庫比對</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center mt-16"
+          >
+            <div className="bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50 rounded-3xl p-12">
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                終結盲目嘗試，開始精準健康
+              </h3>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                不再浪費時間和金錢在不適合的產品上，讓科學為您找到真正有效的營養方案
+              </p>
+              <Link
+                to="/nutrition-center"
+                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-full text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
+                立即開始基因檢測
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-50 via-purple-25 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
