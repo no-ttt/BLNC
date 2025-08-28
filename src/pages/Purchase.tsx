@@ -436,7 +436,7 @@ const Purchase = () => {
                 </div>
               </div>
 
-              <button className="w-full px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+              <button className="w-full px-8 py-4 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 立即購買
               </button>

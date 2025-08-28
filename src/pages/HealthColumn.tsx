@@ -219,9 +219,9 @@ const HealthColumn = () => {
             <input
               type="email"
               placeholder="請輸入您的電子郵件"
-              className="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-            <button className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200">
               立即訂閱
             </button>
           </div>

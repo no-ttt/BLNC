@@ -134,14 +134,14 @@ const Home = () => {
             >
               <Link
                 to="/nutrition-center"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 開始您的健康之旅
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-primary-200 hover:bg-primary-50 transition-all duration-200"
+                className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-blue-200 hover:bg-blue-50 transition-all duration-200"
               >
                 了解更多
               </Link>
@@ -229,7 +229,7 @@ const Home = () => {
             </p>
             <Link
               to="/nutrition-center"
-              className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-full text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+             className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-full text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
               立即開始檢測
               <ArrowRight className="ml-3 h-6 w-6" />
@@ -341,7 +341,7 @@ const Home = () => {
                     維護牙齒健康
                   </div>
                 </div>
-                <button className="w-full px-4 py-3 bg-gradient-to-r from-primary-400 to-primary-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                   了解更多
                 </button>
               </div>
@@ -389,7 +389,7 @@ const Home = () => {
                     增強體力活力
                   </div>
                 </div>
-                <button className="w-full px-4 py-3 bg-gradient-to-r from-accent-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                   了解更多
                 </button>
               </div>
@@ -437,7 +437,7 @@ const Home = () => {
                     維護視力健康
                   </div>
                 </div>
-                <button className="w-full px-4 py-3 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                   了解更多
                 </button>
               </div>
@@ -485,7 +485,7 @@ const Home = () => {
                     專利成分保證
                   </div>
                 </div>
-                <button className="w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                <button className="w-full px-4 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                   了解更多
                 </button>
               </div>
@@ -535,7 +535,7 @@ const Home = () => {
                 </div>
                 <Link
                   to="/nutrition-center"
-                  className="block w-full px-4 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-center"
+                  className="block w-full px-4 py-3 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-center"
                 >
                   立即檢測
                 </Link>

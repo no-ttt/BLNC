@@ -385,7 +385,7 @@ const NutritionCenter = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                 >
                   註冊帳號
                 </button>
@@ -582,7 +582,7 @@ const NutritionCenter = () => {
             <div className="text-center">
               <button
                 onClick={() => setCurrentStep('order')}
-                className="px-8 py-4 bg-gradient-to-r from-primary-400 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="px-8 py-4 bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
                 選擇訂購方案
               </button>
