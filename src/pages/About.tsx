@@ -550,7 +550,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center mt-12"
           >
-            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-primary-200 hover:bg-primary-50 hover:border-primary-300 transition-all duration-200">
+            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-blue-200 hover:bg-blue-50 hover:border-blue-300 transition-all duration-200">
               查看所有產品
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>

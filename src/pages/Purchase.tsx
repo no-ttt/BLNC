@@ -270,7 +270,7 @@ const Purchase = () => {
                     ))}
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-100">
-                    <button className={`w-full py-2 px-4 rounded-xl text-white font-medium bg-gradient-to-r ${product.color} hover:shadow-lg transition-all duration-200`}>
+                    <button className="w-full py-2 px-4 rounded-xl text-white font-medium bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 hover:shadow-lg transition-all duration-200">
                       查看詳情
                     </button>
                   </div>
@@ -383,7 +383,7 @@ const Purchase = () => {
                 <button
                   className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 ${
                     selectedPlan === plan.id
-                      ? 'bg-gradient-to-r from-primary-400 to-accent-500 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-400 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -482,7 +482,7 @@ const Purchase = () => {
               <Users className="mr-2 h-5 w-5" />
               聯絡專業顧問
             </button>
-            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-primary-200 hover:bg-primary-50 transition-all duration-200">
+            <button className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-blue-200 hover:bg-blue-50 transition-all duration-200">
               查看常見問題
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
